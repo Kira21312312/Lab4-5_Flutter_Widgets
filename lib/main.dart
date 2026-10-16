@@ -5,7 +5,10 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      body: GradientContainer()
+      body: GradientContainer( 
+        Colors.black,
+        Colors.blue,
+        Colors.white,)
       )
       )
       );
