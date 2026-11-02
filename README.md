@@ -1,17 +1,37 @@
-# flutter_widgets_toranik
+# Лабораторная работа №4-5. Flutter: структура UI и компонентный подход
 
-A new Flutter project.
+**Выполнил:** Торяник Кирилл, группа ИСП-243
+**Дата сдачи:** 02.11.2026 
 
-## Getting Started
+## Что изучил
+1. Понял что дерево виджетов лучше не пихать все в main() а дробить на классы и файлы
+2. Научился юзать StatelessWidget для статичного UI и StatefulWidget для того, что должно меняться.
+3. Разобрался как работает setState и зачем он нужен для перерисовки
+4. Попробовал передавать данные в виджеты через конструкторы final поля
+5. Научился подключать локальные картинки через pubspec.yaml и выводить их через image.asset
 
-This project is a starting point for a Flutter application.
+## Скриншот финального приложения
+![Финал](img/step6_Toranik.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Ссылка на репозиторий
+[GitHub](https://github.com/Kira21312312/Lab4-5_Flutter_Widgets/commits/main/)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Как запустить
+1. Клонируй репу: git clone <ссылка>
+2. Зайди в папку: cd flutter_widgets_фамилия
+3. Подтяни зависимости: flutter pub get
+4. Запусти в хроме: flutter run -d chrome
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Ответы на вопросы 
+
+1. Если держать всё в main.dart файл быстро распухнет до 1000+ строк и в нем будет невозможно найти нужный кусок
+
+2. BuildContext это по сути ссылка на место виджета в дереве виджетов. Он нужен, чтобы Flutter понимал где именно находится этот элемент и мог передать ему настройки темы медиа-запросы и тд метод build() принимает его потому что при перестройке виджета фреймворк автоматически передаёт актуальный контекст.
+
+3. StatelessWidget это неизменяемый виджет отрисовывается один раз и не хранит состояние. Нужен для статики
+StatefulWidget имеет изменяемое состояние (объект State) которое может перестраиваться через setState.
+Пример: для фона с градиентом хватит StatelessWidget, а для кубика с рандомом нужен StatefulWidget.
+
+4. Что бы не пересоздавать новый обьект генератора каждый раз а просто переиспользуем его это эфективнее по ресурсам.
