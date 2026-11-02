@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets_toranik/gradient_container.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
       body: GradientContainer( 
